@@ -3,110 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- Google Font for better typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Main Page</title>
     <style>
-        /* General Styles for the Portfolio Page */
         body {
-            font-family: 'Roboto', sans-serif; /* Custom Google Font */
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f1f1f1;
             margin: 0;
             padding: 0;
-            background-color: #121212; /* Dark background */
-            color: #f1f1f1; /* Light text */
-        }
-
-        /* Header Section */
-        header {
-            text-align: center;
-            padding: 20px;
-            background: #1e1e1e;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        /* Portfolio Container */
-        .portfolio-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        /* Individual Portfolio Item Styling */
-        .portfolio-item {
-            background: #1e1e1e;
+        .main-content {
+            text-align: center;
+        }
+
+        .portfolio-button {
+            padding: 15px 30px;
+            background-color: #1e1e1e;
+            color: #f1f1f1;
+            font-size: 1.5rem;
+            text-decoration: none;
             border-radius: 8px;
-            overflow: hidden;
-            width: 300px;
-            transition: transform 0.3s;
+            transition: background-color 0.3s;
         }
 
-        .portfolio-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.05); /* Hover effect: scale up */
-        }
-
-        .portfolio-item h3 {
-            padding: 10px;
-            margin: 0;
-        }
-
-        .portfolio-item p {
-            padding: 0 10px 10px 10px;
-            margin: 0;
-        }
-
-        /* Mobile responsiveness: stack items vertically */
-        @media (max-width: 768px) {
-            .portfolio-container {
-                flex-direction: column;
-                align-items: center;
-            }
+        .portfolio-button:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>My Portfolio</h1>
-    </header>
-
-    <div class="portfolio-container">
-        <!-- Portfolio Item 1 (with link) -->
-        <a href="https://yourprojectlink1.com">
-            <div class="portfolio-item">
-                <img src="image1.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of Project 1.</p>
-            </div>
-        </a>
-        
-        <!-- Portfolio Item 2 (with link) -->
-        <a href="https://yourprojectlink2.com">
-            <div class="portfolio-item">
-                <img src="image2.jpg" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Description of Project 2.</p>
-            </div>
-        </a>
-        
-        <!-- Portfolio Item 3 (with link) -->
-        <a href="https://yourprojectlink3.com">
-            <div class="portfolio-item">
-                <img src="image3.jpg" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>Description of Project 3.</p>
-            </div>
-        </a>
-
-        <!-- Add more portfolio items here as needed -->
+    <div class="main-content">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Click the button below to view my projects.</p>
+        <a href="portfolio.html" class="portfolio-button">View Portfolio</a>
     </div>
 </body>
 </html>
