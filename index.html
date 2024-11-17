@@ -3,93 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Theme Professional Website</title>
+    <title>Portfolio</title>
     <style>
-        /* Dark theme styles for the entire website */
+        /* Styles for the portfolio page */
         body {
             font-family: Arial, sans-serif;
-            margin: 0; /* Changed margin to 0 */
+            margin: 0;
             padding: 0;
-            color: #f1f1f1; /* Lighter text color for dark background */
-            line-height: 1.6;
-            background-color: #121212; /* Dark background color */
+            background-color: #121212; /* Dark background */
+            color: #f1f1f1; /* Light text */
         }
         header {
-            position: relative;
             text-align: center;
-            color: #f1f1f1; /* Light text color for the header */
+            padding: 20px;
+            background: #1e1e1e;
         }
-        header img {
+        h1 {
+            font-size: 2.5rem;
+        }
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .portfolio-item {
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        .portfolio-item img {
             width: 100%;
             height: auto;
-            display: block;
-            opacity: 0.8; /* Slight opacity for blending with the dark theme */
         }
-        header .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7); /* Darker overlay for better text contrast */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding-top: 40px; /* Added padding to move content slightly downward */
+        .portfolio-item:hover {
+            transform: scale(1.05);
         }
-        header h1 {
-            font-size: 2.5rem; /* Reduced font size for a slightly smaller headline */
-            margin: 10px 0;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* Text shadow for improved readability */
+        .portfolio-item h3 {
+            padding: 10px;
+            margin: 0;
         }
-        header a {
-            padding: 12px 24px;
-            border-radius: 8px;
-            background: #1e90ff; /* Blue color for the button */
-            color: #fff;
-            text-decoration: none;
-            transition: background 0.3s, transform 0.3s;
-            margin-top: 10px; /* Added margin to space out elements */
-        }
-        header a:hover {
-            background: #1c7ed6; /* Slightly darker blue when hovering */
-            transform: scale(1.05); /* Hover effect */
-        }
-        main {
-            padding: 40px;
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #1e1e1e; /* Dark gray background for main content */
-            border-radius: 8px;
-        }
-        main h2 {
-            color: #f1f1f1; /* Light text color */
-        }
-        main p {
-            color: #dcdcdc; /* Slightly lighter gray for paragraph text */
+        .portfolio-item p {
+            padding: 0 10px 10px 10px;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <img src="your-image.jpg" alt="Header Image"> <!-- Replace with the path to your image -->
-        <div class="overlay">
-            <div>
-                <h1>Welcome to My Site</h1>
-                <a href="#main-content">Learn More</a>
-                <a href="portfolio.html" style="margin-top: 15px; padding: 12px 24px; border-radius: 8px; background: #ff6347; color: #fff; text-decoration: none; transition: background 0.3s, transform 0.3s;">View Portfolio</a> <!-- New button to portfolio page -->
-            </div>
-        </div>
+        <h1>My Portfolio</h1>
     </header>
 
-    <!-- Main Content Section -->
-    <main id="main-content">
-        <section>
-            <h2>Main Content Window</h2>
-            <p>This is where your main content will appear.</p>
-        </section>
-    </main>
+    <div class="portfolio-container">
+        <!-- Add portfolio items here -->
+        <div class="portfolio-item">
+            <img src="image1.jpg" alt="Project 1"> <!-- Replace with your image path -->
+            <h3>Project 1</h3>
+            <p>Description of Project 1.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="image2.jpg" alt="Project 2"> <!-- Replace with your image path -->
+            <h3>Project 2</h3>
+            <p>Description of Project 2.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="image3.jpg" alt="Project 3"> <!-- Replace with your image path -->
+            <h3>Project 3</h3>
+            <p>Description of Project 3.</p>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
 </body>
 </html>
