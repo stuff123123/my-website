@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <!-- Google Font for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Styles for the portfolio page */
+        /* General Styles for the Portfolio Page */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif; /* Custom Google Font */
             margin: 0;
             padding: 0;
             background-color: #121212; /* Dark background */
             color: #f1f1f1; /* Light text */
         }
+
+        /* Header Section */
         header {
             text-align: center;
             padding: 20px;
             background: #1e1e1e;
         }
+
         h1 {
             font-size: 2.5rem;
         }
+
+        /* Portfolio Container */
         .portfolio-container {
             display: flex;
             flex-wrap: wrap;
@@ -28,6 +35,8 @@
             padding: 20px;
             justify-content: center;
         }
+
+        /* Individual Portfolio Item Styling */
         .portfolio-item {
             background: #1e1e1e;
             border-radius: 8px;
@@ -35,20 +44,32 @@
             width: 300px;
             transition: transform 0.3s;
         }
+
         .portfolio-item img {
             width: 100%;
             height: auto;
         }
+
         .portfolio-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.05); /* Hover effect: scale up */
         }
+
         .portfolio-item h3 {
             padding: 10px;
             margin: 0;
         }
+
         .portfolio-item p {
             padding: 0 10px 10px 10px;
             margin: 0;
+        }
+
+        /* Mobile responsiveness: stack items vertically */
+        @media (max-width: 768px) {
+            .portfolio-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -58,23 +79,34 @@
     </header>
 
     <div class="portfolio-container">
-        <!-- Add portfolio items here -->
-        <div class="portfolio-item">
-            <img src="image1.jpg" alt="Project 1"> <!-- Replace with your image path -->
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
-        </div>
-        <div class="portfolio-item">
-            <img src="image2.jpg" alt="Project 2"> <!-- Replace with your image path -->
-            <h3>Project 2</h3>
-            <p>Description of Project 2.</p>
-        </div>
-        <div class="portfolio-item">
-            <img src="image3.jpg" alt="Project 3"> <!-- Replace with your image path -->
-            <h3>Project 3</h3>
-            <p>Description of Project 3.</p>
-        </div>
-        <!-- Add more items as needed -->
+        <!-- Portfolio Item 1 (with link) -->
+        <a href="https://yourprojectlink1.com">
+            <div class="portfolio-item">
+                <img src="image1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Description of Project 1.</p>
+            </div>
+        </a>
+        
+        <!-- Portfolio Item 2 (with link) -->
+        <a href="https://yourprojectlink2.com">
+            <div class="portfolio-item">
+                <img src="image2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Description of Project 2.</p>
+            </div>
+        </a>
+        
+        <!-- Portfolio Item 3 (with link) -->
+        <a href="https://yourprojectlink3.com">
+            <div class="portfolio-item">
+                <img src="image3.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Description of Project 3.</p>
+            </div>
+        </a>
+
+        <!-- Add more portfolio items here as needed -->
     </div>
 </body>
 </html>
