@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Website with Top Image</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
+    <title>Dark Theme Professional Website</title>
     <style>
-        /* Basic styling for layout and presentation */
+        /* Dark theme styles for the entire website */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #f1f1f1; /* Lighter text color for dark background */
             line-height: 1.6;
+            background-color: #121212; /* Dark background color */
         }
         header {
             position: relative;
             text-align: center;
-            color: white;
+            color: #f1f1f1; /* Light text color for the header */
         }
         header img {
             width: 100%;
             height: auto;
             display: block;
+            opacity: 0.8; /* Slight opacity for blending with the dark theme */
         }
         header .overlay {
             position: absolute;
@@ -30,36 +31,49 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7); /* Darker overlay for better text contrast */
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            padding: 20px;
         }
         header h1 {
             font-size: 3rem;
-            margin: 0;
+            margin: 10px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* Text shadow for improved readability */
         }
         header a {
+            padding: 12px 24px;
+            border-radius: 8px;
+            background: #1e90ff; /* Blue color for the button */
             color: #fff;
             text-decoration: none;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            background: #007bff;
-            border-radius: 5px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
         header a:hover {
-            background: #0056b3;
+            background: #1c7ed6; /* Slightly darker blue when hovering */
+            transform: scale(1.05); /* Hover effect */
         }
         main {
-            padding: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #1e1e1e; /* Dark gray background for main content */
+            border-radius: 8px;
+        }
+        main h2 {
+            color: #f1f1f1; /* Light text color */
+        }
+        main p {
+            color: #dcdcdc; /* Slightly lighter gray for paragraph text */
         }
     </style>
 </head>
 <body>
-    <!-- Header Section with Custom Image and Text -->
+    <!-- Header Section -->
     <header>
-        <img src="your-image.jpg" alt="Header Image"> <!-- Replace 'your-image.jpg' with your image path -->
+        <img src="your-image.jpg" alt="Header Image"> <!-- Replace with the path to your image -->
         <div class="overlay">
             <div>
                 <h1>Welcome to My Site</h1>
@@ -68,7 +82,7 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content Section -->
     <main id="main-content">
         <section>
             <h2>Main Content Window</h2>
