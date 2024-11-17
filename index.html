@@ -1,4 +1,79 @@
-<html>
-    <h1>hi</h1>
-    <h4>hello this is my webpage to showcase cool stuff...</h4>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Website with Top Image</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
+    <style>
+        /* Basic styling for layout and presentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        header img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            background: #007bff;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        header a:hover {
+            background: #0056b3;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Custom Image and Text -->
+    <header>
+        <img src="your-image.jpg" alt="Header Image"> <!-- Replace 'your-image.jpg' with your image path -->
+        <div class="overlay">
+            <div>
+                <h1>Welcome to My Site</h1>
+                <a href="#main-content">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section>
+            <h2>Main Content Window</h2>
+            <p>This is where your main content will appear.</p>
+        </section>
+    </main>
+</body>
 </html>
