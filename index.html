@@ -43,8 +43,8 @@
             border-radius: 8px;
             overflow: hidden;
             width: 300px;
-            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
+            cursor: pointer;
         }
 
         .portfolio-item img {
@@ -57,27 +57,14 @@
             margin: 0;
         }
 
-        /* Hover effect to show a larger preview */
-        .portfolio-item:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-            z-index: 10;
-        }
-
         /* Hover overlay effect */
-        .portfolio-item:hover .hover-overlay {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Hover Overlay */
         .hover-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             color: #f1f1f1;
             display: flex;
             flex-direction: column;
@@ -86,8 +73,13 @@
             padding: 20px;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
             text-align: center;
+        }
+
+        .portfolio-item:hover .hover-overlay {
+            opacity: 1;
+            visibility: visible;
         }
 
         .hover-overlay h3 {
@@ -98,6 +90,7 @@
         .hover-overlay p {
             font-size: 1rem;
             line-height: 1.5;
+            padding: 0 15px;
         }
 
     </style>
