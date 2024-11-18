@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>Portfolio</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #f1f1f1;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #121212;
+            color: #f1f1f1;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #1e1e1e;
+        }
+
+        h1 {
+            font-size: 2.5rem;
         }
 
         .main-content {
             text-align: center;
+            padding: 40px;
         }
 
         .portfolio-button {
@@ -34,13 +42,84 @@
         .portfolio-button:hover {
             background-color: #333;
         }
+
+        /* Portfolio Section */
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .portfolio-item {
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item h3 {
+            padding: 10px;
+            margin: 0;
+        }
+
+        .portfolio-item p {
+            padding: 0 10px 10px 10px;
+            margin: 0;
+        }
+
+        /* Scroll and spacing */
+        .spacer {
+            height: 50px;
+        }
     </style>
 </head>
 <body>
-    <div class="main-content">
+    <header>
         <h1>Welcome to My Portfolio</h1>
-        <p>Click the button below to view my projects.</p>
-        <a href="portfolio.html" class="portfolio-button">View Portfolio</a>
+    </header>
+
+    <!-- Main Content (Introduction) -->
+    <div class="main-content">
+        <h2>Welcome to My Personal Portfolio</h2>
+        <p>Click the button below to explore my projects and work.</p>
+        <a href="#portfolio" class="portfolio-button">View Portfolio</a>
     </div>
+
+    <!-- Spacer for Scroll Effect -->
+    <div class="spacer" id="portfolio"></div>
+
+    <!-- Portfolio Section -->
+    <div class="portfolio-container">
+        <!-- Portfolio Items -->
+        <div class="portfolio-item">
+            <img src="image1.jpg" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>Description of Project 1.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="image2.jpg" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>Description of Project 2.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="image3.jpg" alt="Project 3">
+            <h3>Project 3</h3>
+            <p>Description of Project 3.</p>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+
 </body>
 </html>
