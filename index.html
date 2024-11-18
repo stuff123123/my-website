@@ -31,38 +31,52 @@
 
         /* Portfolio Section */
         .portfolio-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding: 20px;
-            justify-content: center;
         }
 
         .portfolio-item {
             background: #1e1e1e;
             border-radius: 8px;
             overflow: hidden;
-            width: 400px;
             padding: 20px;
-            position: relative;
-            text-align: center;
             transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .portfolio-item p {
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         .portfolio-item img {
             width: 100%;
             height: auto;
-            margin-bottom: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
         }
 
-        .portfolio-item h3 {
-            font-size: 2rem;
-            margin: 10px 0;
+        @media (max-width: 768px) {
+            .portfolio-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .portfolio-item p {
-            font-size: 1.2rem;
-            line-height: 1.5;
+        @media (max-width: 480px) {
+            .portfolio-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -79,25 +93,158 @@
 
     <!-- Portfolio Section -->
     <div class="portfolio-container">
-        <!-- Portfolio Items -->
+        <!-- Portfolio Items (30 total items in a 3x10 grid) -->
         <div class="portfolio-item">
-            <img src="image1.jpg" alt="Project 1"> <!-- Replace with your image path -->
             <h3>Project 1</h3>
-            <p>Here is a detailed description of Project 1, explaining what it is, what technologies were used, and any other relevant information.</p>
+            <p>Description of Project 1.</p>
+            <img src="image1.png" alt="Project 1"> <!-- Example image -->
         </div>
-
         <div class="portfolio-item">
-            <img src="image2.jpg" alt="Project 2"> <!-- Replace with your image path -->
             <h3>Project 2</h3>
-            <p>Here is a detailed description of Project 2, explaining the goals, challenges faced, and the final outcome of the project.</p>
+            <p>Description of Project 2.</p>
+            <img src="image2.jpg" alt="Project 2"> <!-- Replace with your image -->
         </div>
-
         <div class="portfolio-item">
-            <img src="image3.jpg" alt="Project 3"> <!-- Replace with your image path -->
             <h3>Project 3</h3>
-            <p>Here is a detailed description of Project 3, highlighting the skills applied and any innovative solutions implemented.</p>
+            <p>Description of Project 3.</p>
+            <img src="image3.jpg" alt="Project 3"> <!-- Replace with your image -->
         </div>
-        <!-- Add more items as needed -->
+        <!-- Repeat the structure below for a total of 30 projects -->
+        <div class="portfolio-item">
+            <h3>Project 4</h3>
+            <p>Description of Project 4.</p>
+            <img src="image4.jpg" alt="Project 4">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 5</h3>
+            <p>Description of Project 5.</p>
+            <img src="image5.jpg" alt="Project 5">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 6</h3>
+            <p>Description of Project 6.</p>
+            <img src="image6.jpg" alt="Project 6">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 7</h3>
+            <p>Description of Project 7.</p>
+            <img src="image7.jpg" alt="Project 7">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 8</h3>
+            <p>Description of Project 8.</p>
+            <img src="image8.jpg" alt="Project 8">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 9</h3>
+            <p>Description of Project 9.</p>
+            <img src="image9.jpg" alt="Project 9">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 10</h3>
+            <p>Description of Project 10.</p>
+            <img src="image10.jpg" alt="Project 10">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 11</h3>
+            <p>Description of Project 11.</p>
+            <img src="image11.jpg" alt="Project 11">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 12</h3>
+            <p>Description of Project 12.</p>
+            <img src="image12.jpg" alt="Project 12">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 13</h3>
+            <p>Description of Project 13.</p>
+            <img src="image13.jpg" alt="Project 13">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 14</h3>
+            <p>Description of Project 14.</p>
+            <img src="image14.jpg" alt="Project 14">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 15</h3>
+            <p>Description of Project 15.</p>
+            <img src="image15.jpg" alt="Project 15">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 16</h3>
+            <p>Description of Project 16.</p>
+            <img src="image16.jpg" alt="Project 16">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 17</h3>
+            <p>Description of Project 17.</p>
+            <img src="image17.jpg" alt="Project 17">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 18</h3>
+            <p>Description of Project 18.</p>
+            <img src="image18.jpg" alt="Project 18">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 19</h3>
+            <p>Description of Project 19.</p>
+            <img src="image19.jpg" alt="Project 19">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 20</h3>
+            <p>Description of Project 20.</p>
+            <img src="image20.jpg" alt="Project 20">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 21</h3>
+            <p>Description of Project 21.</p>
+            <img src="image21.jpg" alt="Project 21">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 22</h3>
+            <p>Description of Project 22.</p>
+            <img src="image22.jpg" alt="Project 22">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 23</h3>
+            <p>Description of Project 23.</p>
+            <img src="image23.jpg" alt="Project 23">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 24</h3>
+            <p>Description of Project 24.</p>
+            <img src="image24.jpg" alt="Project 24">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 25</h3>
+            <p>Description of Project 25.</p>
+            <img src="image25.jpg" alt="Project 25">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 26</h3>
+            <p>Description of Project 26.</p>
+            <img src="image26.jpg" alt="Project 26">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 27</h3>
+            <p>Description of Project 27.</p>
+            <img src="image27.jpg" alt="Project 27">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 28</h3>
+            <p>Description of Project 28.</p>
+            <img src="image28.jpg" alt="Project 28">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 29</h3>
+            <p>Description of Project 29.</p>
+            <img src="image29.jpg" alt="Project 29">
+        </div>
+        <div class="portfolio-item">
+            <h3>Project 30</h3>
+            <p>Description of Project 30.</p>
+            <img src="image30.jpg" alt="Project 30">
+        </div>
     </div>
 </body>
 </html>
